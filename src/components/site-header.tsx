@@ -54,7 +54,7 @@ export function SiteHeader() {
           <p className="text-slate-300">
             {business.tagline}
             {business.isDemoBrand ? (
-              <span className="ml-2 rounded-full bg-white/10 px-2 py-0.5 text-[0.7rem] font-semibold text-cyan">
+              <span className="ml-2 rounded-full bg-white/10 px-2 py-0.5 text-xs font-semibold text-cyan">
                 ডেমো ব্র্যান্ড
               </span>
             ) : null}
@@ -168,7 +168,17 @@ export function SiteHeader() {
         hidden={!open}
         className="border-t border-line bg-white lg:hidden"
       >
-        <nav aria-label="মোবাইল মেনু" className="container-page py-4">
+        {/*
+          The panel is capped to the space left under the sticky header and
+          scrolls on its own. Without this, the menu is taller than a short
+          phone viewport (e.g. 375x667), the bottom call/WhatsApp buttons
+          become unreachable, and the locked body scroll cannot be used to
+          reach them either. See `.menu-scroll-panel` in globals.css.
+        */}
+        <nav
+          aria-label="মোবাইল মেনু"
+          className="menu-scroll-panel container-page py-4"
+        >
           <ul className="grid gap-1">
             {navItems.map((item) => {
               const active = isActive(pathname, item.href);

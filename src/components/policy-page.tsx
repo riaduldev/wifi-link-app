@@ -41,12 +41,12 @@ export function PolicyPage({
                 <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-muted">
                   অংশসমূহ
                 </h2>
-                <ol className="mt-3 space-y-2">
+                <ol className="mt-3 space-y-0.5">
                   {sections.map((section) => (
                     <li key={section.id}>
                       <a
                         href={`#${section.id}`}
-                        className="text-sm text-ink-soft transition-colors hover:text-brand"
+                        className="-mx-2 block rounded px-2 py-2.5 text-sm text-ink-soft transition-colors hover:bg-brand-soft hover:text-brand"
                       >
                         {section.heading}
                       </a>

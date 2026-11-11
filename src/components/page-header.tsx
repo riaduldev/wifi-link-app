@@ -26,7 +26,7 @@ export function PageHeader({
       <Container className="py-10 sm:py-12 lg:py-16">
         {crumbs.length > 0 ? (
           <nav aria-label="ব্রেডক্রাম্ব" className="mb-4">
-            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
+            <ol className="flex flex-wrap items-center gap-x-1.5 text-sm text-ink-muted">
               {crumbs.map((crumb, index) => (
                 <li key={crumb.label} className="flex items-center gap-1.5">
                   {index > 0 ? (
@@ -35,12 +35,17 @@ export function PageHeader({
                   {crumb.href ? (
                     <Link
                       href={crumb.href}
-                      className="transition-colors hover:text-brand"
+                      // Padding gives the link a real touch target on
+                      // phones without changing the visual rhythm.
+                      className="-mx-1 rounded px-1 py-2.5 transition-colors hover:text-brand sm:py-1"
                     >
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span aria-current="page" className="font-medium text-ink-soft">
+                    <span
+                      aria-current="page"
+                      className="-mx-1 rounded px-1 py-2.5 font-medium text-ink-soft sm:py-1"
+                    >
                       {crumb.label}
                     </span>
                   )}

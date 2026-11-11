@@ -126,7 +126,8 @@ function TopicChip({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
+      // 44px minimum touch target on phones, tighter on larger screens.
+      className={`min-h-11 rounded-full border px-4 py-2 text-sm font-medium transition-colors sm:min-h-0 sm:py-1.5 ${
         active
           ? "border-brand bg-brand text-white"
           : "border-line-strong bg-white text-ink-soft hover:border-brand hover:text-brand-dark"

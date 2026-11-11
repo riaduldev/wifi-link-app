@@ -237,9 +237,17 @@ images are used.
   form controls with `aria-describedby` / `aria-invalid`, `role="status"`
   regions for submission feedback.
 * The mobile menu is a button with `aria-expanded` / `aria-controls`, closes
-  on `Escape` (focus returns to the trigger) and on navigation.
+  on `Escape` (focus returns to the trigger) and on navigation. The panel is
+  capped to the space under the sticky header and scrolls on its own, so the
+  call / WhatsApp actions stay reachable on short phone viewports (where the
+  body scroll is locked while the menu is open).
 * FAQ uses native `<details>` / `<summary>` — keyboard and screen-reader
   friendly without JavaScript.
+* `html` carries a responsive `scroll-padding-top` (and `scroll-margin-top`
+  fallback), so in-page anchors — the package "apply" jump and the
+  privacy/terms section links — always land clear of the sticky header.
+* Interactive targets are at least 40 px tall on phones (FAQ filter chips,
+  breadcrumbs, footer and policy links); body text never drops below 12 px.
 * Layouts are mobile-first and checked for 320 / 375 / 430 / 768 / 1024 /
   1440 / 1920 px; the comparison table becomes stacked cards below `md`.
 * The nine-item main navigation uses short labels ("পরিচিতি", "মিডিয়া")

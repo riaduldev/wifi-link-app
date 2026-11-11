@@ -62,7 +62,7 @@ export function Logo({ asLink = true, inverted = false, className }: LogoProps) 
           {business.brandName}
         </span>
         <span
-          className={`mt-1 text-[0.65rem] font-medium uppercase tracking-[0.18em] ${
+          className={`mt-1 text-xs font-medium uppercase tracking-[0.14em] ${
             inverted ? "text-cyan" : "text-brand"
           }`}
         >

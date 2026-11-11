@@ -119,7 +119,7 @@ export function ContactChannels({
                 {...(channel.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="font-semibold text-navy transition-colors hover:text-brand"
+                className="-my-1 inline-block rounded px-1 py-2.5 font-semibold text-navy transition-colors hover:text-brand"
               >
                 {channel.value}
               </a>

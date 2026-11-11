@@ -59,9 +59,34 @@
 }
 
 @layer base {
+  :root {
+    /*
+      Height reserved for the sticky header so that in-page anchors (the
+      package "apply" jump, and the privacy/terms section links) are not
+      hidden underneath it.
+        - mobile: 64px header + a little breathing room
+        - lg:     40px top bar + 72px header + breathing room
+    */
+    --scroll-offset: 5.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --scroll-offset: 8.5rem;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Keeps anchored targets clear of the sticky header. */
+    scroll-padding-top: var(--scroll-offset);
+  }
+
+  /* Fallback for browsers without scroll-padding support. */
+  :target,
+  [id] {
+    scroll-margin-top: var(--scroll-offset);
   }
 
   body {
@@ -201,6 +226,21 @@
 
   .skip-link:focus {
     top: 1rem;
+  }
+
+  /*
+    Mobile navigation panel. Capped to the space left under the sticky
+    header and scrolls on its own, so the bottom call / WhatsApp actions
+    stay reachable on short phone viewports (the body scroll is locked
+    while the menu is open).
+    `dvh` follows the mobile browser chrome; `vh` is the fallback.
+  */
+  .menu-scroll-panel {
+    max-height: calc(100vh - 4rem);
+    max-height: calc(100dvh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

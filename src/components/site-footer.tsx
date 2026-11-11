@@ -48,12 +48,12 @@ export function SiteFooter() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">
               সেবা
             </h2>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3 space-y-0.5">
               {navItems.slice(0, 5).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-300 transition-colors hover:text-cyan"
+                    className="-mx-2 inline-block rounded px-2 py-2.5 text-sm text-slate-300 transition-colors hover:text-cyan"
                   >
                     {item.label}
                   </Link>
@@ -66,12 +66,12 @@ export function SiteFooter() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">
               সহায়তা
             </h2>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3 space-y-0.5">
               {supportLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-300 transition-colors hover:text-cyan"
+                    className="-mx-2 inline-block rounded px-2 py-2.5 text-sm text-slate-300 transition-colors hover:text-cyan"
                   >
                     {item.label}
                   </Link>
@@ -84,13 +84,13 @@ export function SiteFooter() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">
               যোগাযোগ
             </h2>
-            <ul className="mt-4 space-y-3 text-sm">
+            <ul className="mt-3 space-y-1 text-sm">
               <li className="flex items-start gap-2.5 text-slate-300">
                 <Icon name="phone" size={18} className="mt-0.5 shrink-0" />
                 {phoneHref ? (
                   <a
                     href={phoneHref}
-                    className="transition-colors hover:text-cyan"
+                    className="-my-1 inline-block rounded px-1 py-2.5 transition-colors hover:text-cyan"
                   >
                     {business.phone}
                   </a>
@@ -105,7 +105,7 @@ export function SiteFooter() {
                     href={whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-cyan"
+                    className="-my-1 inline-block rounded px-1 py-2.5 transition-colors hover:text-cyan"
                   >
                     {business.whatsapp}
                   </a>
@@ -120,7 +120,7 @@ export function SiteFooter() {
                 {emailHref ? (
                   <a
                     href={emailHref}
-                    className="transition-colors hover:text-cyan"
+                    className="-my-1 inline-block rounded px-1 py-2.5 transition-colors hover:text-cyan"
                   >
                     {business.email}
                   </a>
@@ -176,7 +176,7 @@ export function SiteFooter() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="transition-colors hover:text-cyan"
+                  className="-my-1 inline-block rounded px-1 py-2.5 transition-colors hover:text-cyan"
                 >
                   {item.label}
                 </Link>

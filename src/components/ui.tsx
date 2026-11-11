@@ -156,7 +156,7 @@ export function Badge({
 export function TbdNote({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`inline-flex items-center rounded-xs bg-warning-soft px-1.5 py-0.5 text-[0.7rem] font-semibold text-warning ${className}`}
+      className={`inline-flex items-center rounded-xs bg-warning-soft px-1.5 py-0.5 text-xs font-semibold text-warning ${className}`}
     >
       তথ্য যোগ করতে হবে
     </span>

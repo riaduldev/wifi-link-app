@@ -63,15 +63,20 @@ export function PackageCard({
           : "border-line hover:shadow-sm"
       }`}
     >
-      <header className="flex items-start justify-between gap-3">
-        <div>
+      {/*
+        The status badge sits beside the title on wide screens, but stacks
+        underneath it on narrow ones — otherwise the badge squeezes the
+        summary into a narrow 3-4 line column at 320-375px.
+      */}
+      <header className="flex flex-col items-start gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
+        <div className="min-w-0">
           <h3 className="text-lg font-bold text-navy">{item.name}</h3>
           <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
             {item.summary}
           </p>
         </div>
         {!item.available ? (
-          <span className="shrink-0 rounded-full bg-warning-soft px-2.5 py-1 text-[0.7rem] font-semibold text-warning">
+          <span className="shrink-0 rounded-full bg-warning-soft px-2.5 py-1 text-xs font-semibold text-warning">
             চালু হওয়ার অপেক্ষায়
           </span>
         ) : null}

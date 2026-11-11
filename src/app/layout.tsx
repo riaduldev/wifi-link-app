@@ -77,6 +77,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       // The inline script below adds `js` to this element before React
       // hydrates, which React would otherwise report as a mismatch.
       suppressHydrationWarning
+      // Lets Next.js keep smooth scrolling for in-page anchors while
+      // handling route transitions instantly.
+      data-scroll-behavior="smooth"
       className={`${geist.variable} ${hindSiliguri.variable} h-full antialiased`}
     >
       <head>
